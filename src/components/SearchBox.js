@@ -10,5 +10,7 @@ const SearchBox = (props) => {
             placeholder= 'Search your movie here'
             ></input>
         </div>
-    )
-}
+    );
+};
+
+export default SearchBox;
