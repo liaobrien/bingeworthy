@@ -42,17 +42,19 @@ const resolvers = {
         },
         deleteUser: async (parent, _, context) => {
             if (context.user) {
-                return User.deleteOne({ _id: context.user._id });
+                return User.findOneAndDelete({ _id: context.user._id });
             }
             throw new AuthenticationError("You must be logged in")
         },
         addList: async (parent, { name }, context) => {
             if (context.user) {
+                const list = await List.create({ name })
+
                 const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
                     {
                         $addToSet: {
-                            lists: { name },
+                            lists: list.id,
                         },
                     },
                     {
@@ -64,13 +66,14 @@ const resolvers = {
             }
             throw new AuthenticationError("You need to be logged in!");
         },
-        deleteList: async (parent, { _id }, context) => {
+        deleteList: async (parent, { id }, context) => {
             if (context.user) {
+                const list = await List.findOneAndDelete({ _id: id });
                 const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
                     {
                         $pull: {
-                            movies: { _id }
+                            lists: list._id
                         },
                     },
                     { new: true }
