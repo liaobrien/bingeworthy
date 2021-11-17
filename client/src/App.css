@@ -26,10 +26,11 @@ body {
 .overlay {
 	position: absolute;
 	background: rgba(4, 167, 104, 0.8);
-	width: 40%;
+	width: 20%;
 	transition: 0.5s ease;
 	opacity: 0;
 	bottom: 50px;
+	left: 20px;
 	font-size: 15px;
 	padding: 0;
 	text-align: left;
@@ -37,11 +38,11 @@ body {
 .overlay2 {
 	position: absolute;
 	background: rgba(4, 167, 104, 0.8);
-	width: 40%;
+	width: 20%;
 	transition: 0.5s ease;
 	opacity: 0;
 	bottom: 50px;
-	left: 190px;
+	left: 243px;
 	font-size: 15px;
 	padding: 0;
 	text-align: right;
