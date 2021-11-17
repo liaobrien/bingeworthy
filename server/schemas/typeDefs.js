@@ -36,17 +36,17 @@ const typeDefs = gql`
 
       type Query {
             me: User
-            list: List
+            list(_id: ID!): List
       }
 
       type Mutation {
             addUser(username: String!, email: String!, password: String!): Auth
             login(email: String!, password: String!): Auth
-            deleteUser(_id: ID!): User
+            deleteUser: User
             addList(name: String!): User
             deleteList(_id: ID!): User
-            addMovie(imdbID: String!): List
-            deleteMovie(imdbID: String!): List
+            addMovie(listID: ID!, imdbID: String!): List
+            deleteMovie(listID: ID!, imdbID: String!): List
       }
 `;
 
