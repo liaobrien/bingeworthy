@@ -67,7 +67,7 @@ export const DELETE_LIST = gql`
 `;
 
 export const ADD_MOVIE = gql`
-      mutation addMovie(listID: ID!, imdbID: String!) {
+      mutation addMovie($listID: ID!, $imdbID: String!) {
             addMovie(listID: $listID, imdbID: $imdbID) {
                   _id
                   name
@@ -84,7 +84,7 @@ export const ADD_MOVIE = gql`
 `;
 
 export const DELETE_MOVIE = gql`
-      mutation deleteMovie(listID: ID!, imdbID: String!) {
+      mutation deleteMovie($listID: ID!, $imdbID: String!) {
             deleteMovie(listID: $listID, imdbID: $imdbID) {
                   _id
                   name
@@ -96,6 +96,20 @@ export const DELETE_MOVIE = gql`
                         plot
                         watched
                   }
+            }
+      }
+`;
+
+export const WATCH_MOVIE = gql`
+      mutation watchMovie($watched: Boolean!) {
+            watchMovie(watched: $watched) {
+                  _id
+                  imdbID
+                  title
+                  releaseDate
+                  poster
+                  plot
+                  watched
             }
       }
 `;
