@@ -5,11 +5,12 @@ import MovieList from './components/MovieList';
 import MovieHeading from './components/MovieHeading';
 import SearchBox from './components/SearchBox';
 import AddToWatchList from './components/AddToWatchList';
-// import ViewMovie from './components/ViewMovie';
+import ViewMovie from './components/ViewMovie';
 
 const App = () => {
 	const [movies, setMovies] = useState([]);
 	const [searchValue, setSearchValue] = useState( '' );
+	const [AddToWatch, setAddToWatch] = useState([]);
 
 	const getMovieRequest = async () => {
 		const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=b8d3ecea`;
@@ -21,6 +22,10 @@ const App = () => {
 			setMovies(responseJson.Search);
 		}
 	};
+	const newAddToWatch = (movie) => {
+		const newMovieAdded = [...AddToWatch, movie];
+		setAddToWatch(newMovieAdded);
+	}
 
 	useEffect(() => {
 		getMovieRequest(searchValue);
@@ -29,13 +34,15 @@ const App = () => {
 	return (
 		<div className='container-fluid movie-app'>
 			<div className='row d-flex align-items-center mt-4 mb-4'>
-				<MovieHeading heading='Movies' />
+				<MovieHeading heading='BingeWorthy' />
+				<button className='btn btn-primary' onClick={ViewMovie}> Your BingeWorthy Movies </button>
 				<SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
 			</div>
 			<div className='row'>
-				<MovieList movies={movies} watchListComponent={AddToWatchList}/>
+				<MovieList movies={movies} watchListComponent={AddToWatchList} handleAddedMovieClick={newAddToWatch}/>
 			</div>
 		</div>
+
 	);
 };
 
