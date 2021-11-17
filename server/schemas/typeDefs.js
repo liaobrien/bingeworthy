@@ -10,6 +10,7 @@ const typeDefs = gql`
 
       type List {
             _id: ID!
+            name: String!
             movies: [Movie]
       }
 
