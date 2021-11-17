@@ -2,8 +2,47 @@ body {
 	background: #141414;
 	color: #ffffff;
 }
-
 .movie-app > .row {
 	overflow-x: auto;
 	flex-wrap: nowrap;
+}
+.image-container {
+	position: relative;
+	transition: transform 0.2s;
+	width: 16%;
+}
+
+.image-container:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+	opacity: 1;
+}
+.image-container:hover .overlay2 {
+	opacity: 1;
+}
+.overlay {
+	position: absolute;
+	background: rgba(4, 167, 104, 0.8);
+	width: 40%;
+	transition: 0.5s ease;
+	opacity: 0;
+	bottom: 50px;
+	font-size: 15px;
+	padding: 0;
+	text-align: left;
+}
+.overlay2 {
+	position: absolute;
+	background: rgba(4, 167, 104, 0.8);
+	width: 40%;
+	transition: 0.5s ease;
+	opacity: 0;
+	bottom: 50px;
+	left: 190px;
+	font-size: 15px;
+	padding: 0;
+	text-align: right;
 }
