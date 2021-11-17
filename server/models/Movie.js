@@ -44,6 +44,11 @@ const movieSchema = new Schema(
             rated: {
                   type: String,
                   required: true
+            },
+            watched: {
+                  type: Boolean,
+                  default: false,
+                  required: true
             }
       }
 );
