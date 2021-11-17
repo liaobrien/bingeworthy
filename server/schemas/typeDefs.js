@@ -36,7 +36,7 @@ const typeDefs = gql`
 
       type Query {
             me: User
-            list(_id: ID!): List
+            list(id: ID!): List
       }
 
       type Mutation {
@@ -47,6 +47,7 @@ const typeDefs = gql`
             deleteList(_id: ID!): User
             addMovie(listID: ID!, imdbID: String!): List
             deleteMovie(listID: ID!, imdbID: String!): List
+            watchMovie(watched: Boolean!): Movie
       }
 `;
 
