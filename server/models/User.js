@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const List = require('./List');
+const { listSchema } = require('./List');
 
 const userSchema = new Schema(
       {
@@ -21,7 +21,7 @@ const userSchema = new Schema(
                   required: true,
             },
             // set lists to be an array of data that adheres to the listSchema
-            lists: [List],
+            lists: [listSchema],
       }
 );
 
