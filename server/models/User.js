@@ -21,7 +21,12 @@ const userSchema = new Schema(
                   required: true,
             },
             // set lists to be an array of data that adheres to the listSchema
-            lists: [listSchema],
+            lists: [
+                  {
+                        type: Schema.Types.ObjectId,
+                        ref: 'List'
+                  }
+            ],
       }
 );
 
