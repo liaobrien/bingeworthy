@@ -1,11 +1,14 @@
 [
       {
-            "name": "My Favorite Movies"
+            "name": "My Favorite Movies",
+            "movies": []
       },
       {
-            "name": "Date Night"
+            "name": "Date Night",
+            "movies": []
       },
       {
-            "name": "Scary Movies"
+            "name": "Scary Movies",
+            "movies": []
       }
 ]
