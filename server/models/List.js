@@ -14,4 +14,4 @@ const listSchema = new Schema(
 
 const List = model('List', listSchema);
 
-module.exports = List;
+module.exports = { List, listSchema };
