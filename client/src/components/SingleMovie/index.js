@@ -9,23 +9,25 @@ import { useParams } from "react-router-dom";
 
 
 const SingleMovie = () => {
-const [movies, setMovies] = useState([]);
+    const [movies, setMovies] = useState({});
 	const [searchValue, setSearchValue] = useState( '' );
 	const [AddToWatch, setAddToWatch] = useState([]);
 	const [ViewMovie, setViewMovie] = useState([]);
-    const {movieID} =useParams();
+    const { movieID } = useParams();
 
-	const getMovieRequest = async () => {
-		const url = `http://www.omdbapi.com/i=${movieID}&apikey=b8d3ecea`;
+	const OneMovieRequest = async () => {
+		const url = `http://www.omdbapi.com/?i=${movieID}&apikey=b8d3ecea`;
 
 		const response = await fetch(url);
 		const responseJson = await response.json();
 
-		if (responseJson.Search) {
-			setMovies(responseJson.Search);
+        console.log(responseJson);
+		if (responseJson) {
+			setMovies(responseJson);
 		}
 	};
-
+    
+    console.log(movies)
 
 	const newAddToWatch = (movie) => {
 		const newMovieAdded = [...AddToWatch, movie];
@@ -36,17 +38,15 @@ const [movies, setMovies] = useState([]);
 		setViewMovie(ViewTheMovie);
 	}
 
-	useEffect(() => {
-		getMovieRequest(searchValue);
-	}, [searchValue]);
+	
+    useEffect(() => {
+		OneMovieRequest(movieID);
+	}, {movieID});
 
 return (
  
   <div className="container-fluid movie-app align-items-center mt-4 mb-4">
-    <MovieHeading heading="BingeWorthy" />
-
-    <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-
+    
     <div className="row d-flex align-items-center mt-4 mb-4"></div>
     <div className="row">
       {/* <
@@ -54,7 +54,28 @@ return (
         watchListComponent={AddToWatchList}
         handleAddedMovieClick={newAddToWatch}
       /> */}
-      < {movie.Title}
+      <div className="text-center">
+      <img
+        alt={movies.Title}
+        className="img-fluid"
+        src={movies.Poster}
+        style={{ margin: '0 auto' }}
+      />
+      <h1> Movie Title: {movies.Title}</h1>
+      <h3>Rated: {movies.Rated}</h3>
+      <h3>IMDB Rating: {movies.imdbRating}</h3>
+      <h3>Genre: {movies.Genre}</h3>
+      <h3>Released: {movies.Released}</h3>
+      <h3>RunTime: {movies.Runtime}</h3>
+      <h3>Actors: {movies.Actors}</h3>
+      <h3>Director: {movies.Director}</h3>
+      <h3>Movie Plot: {movies.Plot}</h3>
+      <h3>Awards: {movies.Awards}</h3>
+
+      
+      
+    </div>
+
     </div>
   </div>
 );

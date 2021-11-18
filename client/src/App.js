@@ -51,7 +51,7 @@ const App = () => {
           <Router>
             
         <Navigation />
-              <Route path="/">
+              <Route  exact path="/">
                 <MovieList
                   movies={movies}
                   watchListComponent={AddToWatchList}
@@ -60,7 +60,7 @@ const App = () => {
                   handleViewMovieClick={newViewMovie}
                 />
               </Route>
-              <Route path="/movie/:movieID">
+              <Route exact path="/movie/:movieID">
                 <SingleMovie />
               </Route>
               {/* <Route path='Donate' <Donate />/> */}
