@@ -47,3 +47,26 @@ body {
 	padding: 0;
 	text-align: right;
 }
+.form-control {
+	position: absolute;
+	text-align: center;
+	width: 35%;
+	left: 700px;
+	right: 0;
+	top: 34px;
+	margin: auto
+}
+
+.btn{
+	position: relative;
+	left: 401px;
+	right: 0;
+	margin: auto;
+	bottom: 39px;
+}
+h1{
+	position:relative;
+	left: 0;
+	right: 0;
+	margin: auto
+}
