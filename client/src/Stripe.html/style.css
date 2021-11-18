@@ -33,7 +33,7 @@ p {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.154px;
-  color: #242d60;
+  color: #0d1857;
   height: 100%;
   width: 100%;
   padding: 0 20px;
@@ -64,7 +64,7 @@ h5 {
 button {
   height: 36px;
   background:blue;
-  color: white;
+  color: rgba(255, 255, 255, 0.671);
   width: 100%;
   font-size: 14px;
   border: 0;
