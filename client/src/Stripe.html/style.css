@@ -63,7 +63,7 @@ h5 {
 }
 button {
   height: 36px;
-  background:blue;
+  background:rgb(30, 30, 216);
   color: rgba(255, 255, 255, 0.671);
   width: 100%;
   font-size: 14px;
