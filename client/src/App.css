@@ -2,8 +2,71 @@ body {
 	background: #141414;
 	color: #ffffff;
 }
-
 .movie-app > .row {
 	overflow-x: auto;
 	flex-wrap: nowrap;
+}
+.image-container {
+	position: relative;
+	transition: transform 0.2s;
+	width: 16%;
+}
+
+.image-container:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+	opacity: 1;
+}
+.image-container:hover .overlay2 {
+	opacity: 1;
+}
+.overlay {
+	position: absolute;
+	background: rgba(4, 167, 104, 0.8);
+	width: 20%;
+	transition: 0.5s ease;
+	opacity: 0;
+	bottom: 50px;
+	left: 20px;
+	font-size: 15px;
+	padding: 0;
+	text-align: left;
+}
+.overlay2 {
+	position: absolute;
+	background: rgba(4, 167, 104, 0.8);
+	width: 20%;
+	transition: 0.5s ease;
+	opacity: 0;
+	bottom: 50px;
+	left: 243px;
+	font-size: 15px;
+	padding: 0;
+	text-align: right;
+}
+.form-control {
+	position: absolute;
+	text-align: center;
+	width: 35%;
+	left: 700px;
+	right: 0;
+	top: 34px;
+	margin: auto
+}
+
+.btn{
+	position: relative;
+	left: 401px;
+	right: 0;
+	margin: auto;
+	bottom: 39px;
+}
+h1{
+	position:relative;
+	left: 0;
+	right: 0;
+	margin: auto
 }
