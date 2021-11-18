@@ -17,7 +17,7 @@ db.once('open', async () => {
             // randomly add each list to a user
             const tempUser = users[Math.floor(Math.random() * users.length)];
             console.log(tempUser);
-            tempUser.lists.push(newList);
+            tempUser.lists.push(newList._id);
             await tempUser.save();
       }
 
