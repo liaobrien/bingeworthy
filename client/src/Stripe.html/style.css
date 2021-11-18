@@ -11,7 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 section {
-  background: #ffffff;
+  background: #fffffffb;
   display: flex;
   flex-direction: column;
   width: 400px;
