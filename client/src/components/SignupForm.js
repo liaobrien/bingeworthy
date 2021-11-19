@@ -30,7 +30,7 @@ const SignupForm = () => {
             const { data } = await addUser({
                 variables: { ...userFormData }
             });
-
+            console.log(data);
             Auth.login(data.addUser.token);
         } catch (err) {
             console.log(err);
@@ -41,7 +41,7 @@ const SignupForm = () => {
     };
 
     return (
-        <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+        <Form noValidate validated={validated} onSubmit={handleFormSubmit} className="container">
             <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant="danger">
                 Something went wrong with your signup!
             </Alert>
@@ -95,14 +95,16 @@ const SignupForm = () => {
                     Password is required!
                 </Form.Control.Feedback>
             </Form.Group>
-
-            <Button
-                disabled={!(userFormData.username && userFormData.email && userFormData.password)}
-                type="submit"
-                variant="success"
-            >
-                Submit
-            </Button>
+            <div className="container">
+                <Button
+                    disabled={!(userFormData.username && userFormData.email && userFormData.password)}
+                    type="submit"
+                    variant="success"
+                    className="mt-5 bg-white text-dark"
+                >
+                    Submit
+                </Button>
+            </div>
         </Form>
     )
 };
