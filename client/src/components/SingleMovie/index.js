@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import MovieHeading from "../MovieHeading";
-import SearchBox from "../SearchBox/SearchBox";
-import AddToWatchList from "../AddToWatchList";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+
 
 const SingleMovie = () => {
   const [movies, setMovies] = useState({});
-  const [searchValue, setSearchValue] = useState("");
-  const [AddToWatch, setAddToWatch] = useState([]);
-  const [ViewMovie, setViewMovie] = useState([]);
   const { movieID } = useParams();
+
+  
 
   const OneMovieRequest = async () => {
     const url = `http://www.omdbapi.com/?i=${movieID}&apikey=b8d3ecea`;
@@ -19,23 +15,12 @@ const SingleMovie = () => {
     const response = await fetch(url);
     const responseJson = await response.json();
 
-    console.log(responseJson);
     if (responseJson) {
       setMovies(responseJson);
     }
   };
 
-  console.log(movies);
-
-  const newAddToWatch = (movie) => {
-    const newMovieAdded = [...AddToWatch, movie];
-    setAddToWatch(newMovieAdded);
-  };
-  const newViewMovie = (movie) => {
-    const ViewTheMovie = [...ViewMovie, movie];
-    setViewMovie(ViewTheMovie);
-  };
-
+  
   useEffect(
     () => {
       OneMovieRequest(movieID);
@@ -54,9 +39,10 @@ const SingleMovie = () => {
             src={movies.Poster}
             style={{ margin: "0 auto" }}
           />
-
+        <button type="button" class="btn btn-danger" onclick={movies.imdbID}>Add To List</button>
+        
           <h1 class="text-primary">
-            {" "}
+  
             Movie Title:<span class="text-white"> {movies.Title}</span>
           </h1>
           <h4 class="text-primary">
@@ -94,5 +80,6 @@ const SingleMovie = () => {
     </div>
   );
 };
+
 
 export default SingleMovie;

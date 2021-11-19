@@ -44,9 +44,10 @@ const App = () => {
       <div className="row d-flex align-items-center mt-4 mb-4"></div>
       <div className="row">
         <MovieHeading heading="BingeWorthy" />
-        <div className="positioning">
+        <div className="positioning" >
           <Router>
             <Navigation />
+            <div class="d-flex flex-wrap">
             <Route exact path="/">
               <MovieList
                 movies={movies}
@@ -60,6 +61,7 @@ const App = () => {
                 setSearchValue={setSearchValue}
               />
             </Route>
+            </div>
             <Route exact path="/movie/:movieID">
               <SingleMovie />
             </Route>
