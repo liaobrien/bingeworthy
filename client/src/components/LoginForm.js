@@ -4,6 +4,7 @@ import { Form, Button, Alert } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
     const [userFormData, setUserFormData] = useState({ email: "", password: "" });
@@ -42,7 +43,7 @@ const LoginForm = () => {
 
     return (
         <>
-            <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+            <Form noValidate validated={validated} onSubmit={handleFormSubmit} className="container">
                 <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant="danger">
                     Something went wrong with your login credentials!
                 </Alert>
@@ -79,13 +80,19 @@ const LoginForm = () => {
                         Password is required!
                     </Form.Control.Feedback>
                 </Form.Group>
-                <Button
-                    disabled={!(userFormData.email && userFormData.password)}
-                    type="submit"
-                    variant="success"
-                >
-                    Submit
-                </Button>
+                <div className="container">
+                    <Button
+                        disabled={!(userFormData.email && userFormData.password)}
+                        type="submit"
+                        variant="success"
+                        className="mt-5 bg-white text-dark"
+                    >
+                        Submit
+                    </Button>
+                </div>
+                <div>
+                    Don't have an account? <Link to="/signup" className="text-light">Create one here.</Link>
+                </div>
             </Form>
         </>
     )
