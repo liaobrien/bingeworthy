@@ -46,7 +46,7 @@ const App = () => {
   const [ViewMovie, setViewMovie] = useState([]);
 
   const getMovieRequest = async () => {
-    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=b8d3ecea`;
+    const url = `http://www.omdbapi.com/?s=${searchValue}&${process.env.REACT_APP_API_KEY}`;
 
     const response = await fetch(url);
     const responseJson = await response.json();
