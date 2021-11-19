@@ -4,10 +4,8 @@ import MovieList from "./components/MovieList/MovieList";
 import MovieHeading from "./components/MovieHeading";
 import SearchBox from "./components/SearchBox/SearchBox";
 import AddToWatchList from "./components/AddToWatchList";
-// import WatchList from './components/WatchList';
 import Navigation from "./components/NavBar";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-// import { BingeList, Donate, Home} from './components/pages';
 import "./App.css";
 import ViewOne from "./components/SingleMovie/View";
 import SingleMovie from "./components/SingleMovie/";
@@ -88,6 +86,10 @@ const App = () => {
 							handleAddedMovieClick={newAddToWatch}
 							viewOneMovie={ViewOne}
 							handleViewMovieClick={newViewMovie}
+							/>
+							<SearchBox
+								searchValue={searchValue}
+								setSearchValue={setSearchValue}
 							/>
 						</Route>
 						<Route exact path="/movie/:movieID">
