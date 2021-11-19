@@ -14,7 +14,7 @@ const SingleMovie = () => {
   const { movieID } = useParams();
 
   const OneMovieRequest = async () => {
-    const url = `http://www.omdbapi.com/?i=${movieID}&apikey=b8d3ecea`;
+    const url = `http://www.omdbapi.com/?i=${movieID}&${process.env.REACT_APP_API_KEY}`;
 
     const response = await fetch(url);
     const responseJson = await response.json();
