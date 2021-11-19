@@ -118,4 +118,4 @@ const resolvers = {
     }
 };
 
-module.export = resolvers;
+module.exports = resolvers;
