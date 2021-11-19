@@ -74,7 +74,6 @@ const App = () => {
 			<div className="row d-flex align-items-center mt-4 mb-4"></div>
 			<div className="row">
 				<MovieHeading heading="BingeWorthy" />
-				<SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
 					<div className="positioning">
 					<Router>
 						
