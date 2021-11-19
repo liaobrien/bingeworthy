@@ -1,33 +1,40 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams } from "react-router-dom";
+// import { useQuery } from "react-query"
+// import UserMovieList from "../MovieList/bingeworthy"
+import { ADD_MOVIE } from "../../utils/mutations"
+
 
 
 const SingleMovie = () => {
   const [movies, setMovies] = useState({});
   const { movieID } = useParams();
 
+
   
 
   const OneMovieRequest = async () => {
-    const url = `http://www.omdbapi.com/?i=${movieID}&apikey=b8d3ecea`;
+    const url = `http://www.omdbapi.com/?i=${movieID}&${process.env.REACT_APP_API_KEY}`;
 
     const response = await fetch(url);
     const responseJson = await response.json();
-
+    
     if (responseJson) {
       setMovies(responseJson);
     }
   };
-
+  
   
   useEffect(
     () => {
       OneMovieRequest(movieID);
     },
-    { movieID }
+    [ movieID ]
+    
   );
-
+    
+    
   return (
     <div className="container-fluid movie-app align-items-center mt-4 mb-4">
       <div className="row d-flex align-items-center mt-4 mb-4"></div>
@@ -39,7 +46,7 @@ const SingleMovie = () => {
             src={movies.Poster}
             style={{ margin: "0 auto" }}
           />
-        <button type="button" class="btn btn-danger" onclick={movies.imdbID}>Add To List</button>
+        <button type="button" class="btn btn-danger" onclick={ADD_MOVIE}>Add To List</button>
         
           <h1 class="text-primary">
   
@@ -80,6 +87,5 @@ const SingleMovie = () => {
     </div>
   );
 };
-
 
 export default SingleMovie;
