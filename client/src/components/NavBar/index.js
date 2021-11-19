@@ -13,9 +13,9 @@ export default function Navigation() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Link className="nav-item nav-link" to="/">Home</Link>
-                    <Link className="nav-item nav-link" to="/BingeWorthy"> BingeWorthy </Link>
-                    <Link className="nav-item nav-link" to="/Donate">Donate</Link>
+                    <Link className="nav-item nav-link text-danger" to="/">Home</Link>
+                    <Link className="nav-item nav-link text-danger" to="/BingeWorthy"> BingeWorthy </Link>
+                    <Link className="nav-item nav-link text-danger" to="/Donate">Donate</Link>
 
                 </Nav>
             </Navbar.Collapse>
