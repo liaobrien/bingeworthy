@@ -35,8 +35,7 @@ body {
 	padding: 0;
 	text-align: right;
 }
-
-.form-control {
+.form-movie-search {
 	position: absolute;
 	text-align: center;
 	width: 35%;
