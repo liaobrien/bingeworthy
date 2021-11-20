@@ -4,14 +4,14 @@ import { useParams } from "react-router-dom";
 // import { useQuery } from "react-query"
 // import UserMovieList from "../MovieList/bingeworthy"
 import { ADD_MOVIE } from "../../utils/mutations"
+import { useMutation } from '@apollo/client'
 
 
 
 const SingleMovie = () => {
   const [movies, setMovies] = useState({});
   const { movieID } = useParams();
-
-
+  const [addMovie, {error}] = useMutation(ADD_MOVIE)
   
 
   const OneMovieRequest = async () => {
@@ -34,7 +34,27 @@ const SingleMovie = () => {
     
   );
     
-    
+    const handleAddMovie = async (movies) => {
+      console.log(movies)
+      await addMovie({
+        variables: {
+          "movieInput": {
+            "imdbID": movies.imdbID,
+            "title": movies.Title,
+            "runtime": movies.Runtime,
+            "releaseDate": movies.Released,
+            "actors": movies.Actors,
+            "director": movies.Director,
+            "poster": movies.Poster,
+            "plot": movies.Plot,
+            "imdbRating": movies.imdbRating,
+            "genre": movies.Genre,
+            "rated": movies.Rated,
+            "watched": false
+          }
+        }
+      })
+    }
   return (
     <div className="container-fluid movie-app align-items-center mt-4 mb-4">
       <div className="row d-flex align-items-center mt-4 mb-4"></div>
@@ -46,7 +66,7 @@ const SingleMovie = () => {
             src={movies.Poster}
             style={{ margin: "0 auto" }}
           />
-        <button type="button" class="btn btn-danger" onclick={ADD_MOVIE}>Add To List</button>
+        <button type="button" class="btn btn-danger" onClick={()=> handleAddMovie(movies)}>Add To List</button>
         
           <h1 class="text-primary">
   

@@ -39,14 +39,27 @@ const typeDefs = gql`
             me: User
             list(id: ID!): List
       }
-
+input MovieData {
+      imdbID: String!
+      title: String!
+      runtime: String!
+      releaseDate: String
+      actors: String
+      director: String
+      poster: String
+      plot: String
+      imdbRating: String
+      genre: String
+      rated: String
+      watched: Boolean
+}
       type Mutation {
             addUser(username: String!, email: String!, password: String!): Auth
             login(email: String!, password: String!): Auth
             deleteUser: User
             addList(name: String!): User
             deleteList(_id: ID!): User
-            addMovie(listID: ID!, imdbID: String!): List
+            addMovie(movieInput:MovieData!): List
             deleteMovie(listID: ID!, imdbID: String!): List
             watchMovie(watched: Boolean!): Movie
       }

@@ -64,20 +64,24 @@ export const DELETE_LIST = gql`
 `;
 
 export const ADD_MOVIE = gql`
-      mutation addMovie($listID: ID!, $imdbID: String!) {
-            addMovie(listID: $listID, imdbID: $imdbID) {
-                  _id
-                  name
-                  movies {
-                        imdbID
-                        title
-                        releaseDate
-                        poster
-                        plot
-                        watched
-                  }
-            }
+mutation addMovie ($movieInput: MovieData!){
+      addMovie(movieInput:$movieInput){ 
+      movies {
+        imdbID
+      title
+      runtime
+      releaseDate
+      actors
+      director
+      poster
+      plot
+      imdbRating
+      genre
+      rated
+      watched
       }
+      }
+    }
 `;
 
 export const DELETE_MOVIE = gql`
