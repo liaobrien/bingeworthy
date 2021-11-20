@@ -3,18 +3,18 @@
             "username": "test1",
             "email": "test1@test.com",
             "password": "test1",
-            "lists": []
+            "lists": ["Binge", "Kids"]
       },
       {
             "username": "test2",
             "email": "test2@test.com",
             "password": "test2",
-            "lists": []
+            "lists": ["Date Night"]
       },
       {
             "username": "test3",
             "email": "test3@test.com",
             "password": "test3",
-            "lists": []
+            "lists": ["Scary"]
       }
 ]

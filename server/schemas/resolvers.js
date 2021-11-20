@@ -19,6 +19,7 @@ const resolvers = {
     },
     Mutation: {
         addUser: async (parent, { username, email, password }) => {
+            console.log(username);
             const user = await User.create({ username, email, password });
             const token = signToken(user);
             return { token, user };
@@ -82,13 +83,17 @@ const resolvers = {
             }
             throw new AuthenticationError("You need to be logged in!");
         },
-        addMovie: async (parent, { listID, imdbID }, context) => {
-            if (context.user) {
+        addMovie: async (parent, { movieInput }, context) => {
+            if (context.user ) {
+                const newList = await List.create({ });
+                console.log(newList)
+                await User.findOneAndUpdate({_id: context.user._id}, {$push:{Lists:newList._id}})
+                const listID = newList._id;
                 const updatedList = await List.findOneAndUpdate(
                     { _id: listID },
                     {
                         $addToSet: {
-                            movies: { imdbID }
+                            movies: movieInput
                         },
                     },
                     {

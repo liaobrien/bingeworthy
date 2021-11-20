@@ -1,48 +1,60 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import MovieHeading from "../MovieHeading";
-import SearchBox from "../SearchBox/SearchBox";
-import AddToWatchList from "../AddToWatchList";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+// import { useQuery } from "react-query"
+// import UserMovieList from "../MovieList/bingeworthy"
+import { ADD_MOVIE } from "../../utils/mutations"
+import { useMutation } from '@apollo/client'
+
+
 
 const SingleMovie = () => {
   const [movies, setMovies] = useState({});
-  const [searchValue, setSearchValue] = useState("");
-  const [AddToWatch, setAddToWatch] = useState([]);
-  const [ViewMovie, setViewMovie] = useState([]);
   const { movieID } = useParams();
+  const [addMovie, {error}] = useMutation(ADD_MOVIE)
+  
 
   const OneMovieRequest = async () => {
     const url = `http://www.omdbapi.com/?i=${movieID}&${process.env.REACT_APP_API_KEY}`;
 
     const response = await fetch(url);
     const responseJson = await response.json();
-
-    console.log(responseJson);
+    
     if (responseJson) {
       setMovies(responseJson);
     }
   };
-
-  console.log(movies);
-
-  const newAddToWatch = (movie) => {
-    const newMovieAdded = [...AddToWatch, movie];
-    setAddToWatch(newMovieAdded);
-  };
-  const newViewMovie = (movie) => {
-    const ViewTheMovie = [...ViewMovie, movie];
-    setViewMovie(ViewTheMovie);
-  };
-
+  
+  
   useEffect(
     () => {
       OneMovieRequest(movieID);
     },
-    { movieID }
+    [ movieID ]
+    
   );
-
+    
+    const handleAddMovie = async (movies) => {
+      console.log(movies)
+      await addMovie({
+        variables: {
+          "movieInput": {
+            "imdbID": movies.imdbID,
+            "title": movies.Title,
+            "runtime": movies.Runtime,
+            "releaseDate": movies.Released,
+            "actors": movies.Actors,
+            "director": movies.Director,
+            "poster": movies.Poster,
+            "plot": movies.Plot,
+            "imdbRating": movies.imdbRating,
+            "genre": movies.Genre,
+            "rated": movies.Rated,
+            "watched": false
+          }
+        }
+      })
+    }
   return (
     <div className="container-fluid movie-app align-items-center mt-4 mb-4">
       <div className="row d-flex align-items-center mt-4 mb-4"></div>
@@ -54,9 +66,10 @@ const SingleMovie = () => {
             src={movies.Poster}
             style={{ margin: "0 auto" }}
           />
-
+        <button type="button" class="btn btn-danger" onClick={()=> handleAddMovie(movies)}>Add To List</button>
+        
           <h1 class="text-primary">
-            {" "}
+  
             Movie Title:<span class="text-white"> {movies.Title}</span>
           </h1>
           <h4 class="text-primary">
