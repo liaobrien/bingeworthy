@@ -7,7 +7,7 @@ import Auth from '../../utils/auth';
 
 export default function Navigation() {
     return (
-        <Navbar className="navbar-margin" expand="lg">
+        <Navbar className="navbar-margin navigation" expand="lg">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">

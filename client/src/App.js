@@ -78,6 +78,7 @@ const App = () => {
 					<Router>
 						
 					<Navigation />
+          <div class="d-flex flex-wrap">
 						<Route  exact path="/">
 							<MovieList
 							movies={movies}
@@ -91,6 +92,7 @@ const App = () => {
 								setSearchValue={setSearchValue}
 							/>
 						</Route>
+            </div>
 						<Route exact path="/movie/:movieID">
 							<SingleMovie />
 						</Route>

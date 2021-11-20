@@ -6,7 +6,7 @@ const listSchema = new Schema(
       {
             name: {
                   type: String,
-                  required: true
+                  
             },
             movies: [movieSchema]
       }
