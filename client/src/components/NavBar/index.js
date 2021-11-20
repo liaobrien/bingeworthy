@@ -12,7 +12,6 @@ export default function Navigation() {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                     <Link className="nav-item nav-link text-white" to="/">Home</Link>
-                    <Link className="nav-item nav-link text-white" to="/BingeWorthy"> BingeWorthy </Link>
                     <Link className="nav-item nav-link text-white" to="/Donate">Donate</Link>
                     {Auth.loggedIn() ? (
                         <>
@@ -23,7 +22,6 @@ export default function Navigation() {
                         </>
                     ) : (
                         <Nav.Link className="nav-item nav-link text-white" as={Link} to="/login">Login/Sign Up</Nav.Link>
-                        // <Nav.Link className="nav-item nav-link text-white" onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
                     )}
                 </Nav>
             </Navbar.Collapse>
