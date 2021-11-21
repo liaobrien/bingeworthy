@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# BingeWorthy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This is a full-stack application designed for movie lovers who want a centralized location for all the movies they want to watch. Users can search for any title, view more information about the movie, and add it to their account for future reference.
 
-In the project directory, you can run:
+![screenshot of application](./client/public/assets/screencap1.png)
 
-### `npm start`
+![screenshot of application](./client/public/assets/screencap2.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Table of Contents
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [Technologies](#technologies)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Links](#links)
+- [Questions](#questions)
 
-### `npm test`
+## Technologies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This application uses the MERN stack and the following technologies:
 
-### `npm run build`
+- React and CSS library Bootstrap on the front end for component rendering and styles
+- MongoDB database for storing all user data
+- JWT authentication
+- GraphQL and Apollo Server Express for interacting with our database
+- OMDb third-party API for retrieving all movie data
+- Deployed via Heroku and MongoDB Atlas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+When used in the browser, a user can search any movie by title, with search results appearing as they type. The user can access a movie's profile by clicking "View" to see more information about the film. In order to add a film to their watchlist, the user must sign up or log in. Once logged in, clicking "Add to List" on the movie profile will save that movie to the user's watchlist, which can be accessed in the "Your Movies" tab. Users can view a movie's profile and delete a movie from this page, as well.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Credits
 
-### `npm run eject`
+This project was created by Lia O'Brien ([liaobrien](https://github.com/liaobrien)), Mark Cirineo ([MarkCirineo](https://github.com/MarkCirineo)), Aaron Donelson ([addonelson](https://github.com/addonelson)), and Kenneth Bentley ([kbentley7](https://github.com/kbentley7)). All movie data is courtesy of the [OMDb API](http://www.omdbapi.com/).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## License
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project is licensed under the MIT License (2021).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Links
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This application is deployed to Heroku and can be viewed [here](https://nameless-castle-76240.herokuapp.com/).
 
-## Learn More
+## Questions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you have any questions about this repository, open an issue or reach out to any of the developers involved in this project via the GitHub profiles linked above.
