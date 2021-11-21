@@ -11,7 +11,6 @@ const typeDefs = gql`
 
       type List {
             _id: ID!
-            name: String!
             movies: [Movie]
       }
 
@@ -37,7 +36,7 @@ const typeDefs = gql`
 
       type Query {
             me: User
-            list(id: ID!): List
+            list(_id: ID!): List
       }
 input MovieData {
       imdbID: String!
