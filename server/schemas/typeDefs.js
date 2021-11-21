@@ -57,7 +57,7 @@ input MovieData {
             login(email: String!, password: String!): Auth
             deleteUser: User
             addList(name: String!): User
-            deleteList(_id: ID!): User
+            deleteList(id: ID!): User
             addMovie(movieInput:MovieData!): List
             deleteMovie(listID: ID!, imdbID: String!): List
             watchMovie(watched: Boolean!): Movie
