@@ -52,13 +52,6 @@ export const DELETE_LIST = gql`
       mutation deleteList($id: ID!) {
             deleteList(id: $id) {
                   _id
-                  username
-                  email
-                  listCount
-                  lists {
-                        _id
-                        name
-                  }
             }
       }
 `;
