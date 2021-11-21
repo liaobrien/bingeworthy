@@ -66,7 +66,7 @@ const Lists = () => {
         <h2 className="text-center">
           {userData.length
             ? `Viewing ${userData.length} saved ${userData.length === 1 ? 'movie' : 'movies'}:`
-            : 'You have no saved lists!'}
+            : 'You have no saved movies!'}
         </h2>
         <div className="d-flex container-fluid">
             <Row className="justify-content-center">
