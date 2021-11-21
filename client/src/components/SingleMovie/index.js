@@ -15,7 +15,7 @@ const SingleMovie = () => {
   
 
   const OneMovieRequest = async () => {
-    const url = `http://www.omdbapi.com/?i=${movieID}&${process.env.REACT_APP_API_KEY}`;
+    const url = `https://www.omdbapi.com/?i=${movieID}&${process.env.REACT_APP_API_KEY}`;
 
     const response = await fetch(url);
     const responseJson = await response.json();
@@ -35,7 +35,6 @@ const SingleMovie = () => {
   );
     
     const handleAddMovie = async (movies) => {
-      console.log(movies)
       await addMovie({
         variables: {
           "movieInput": {
