@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams } from "react-router-dom";
-// import { useQuery } from "react-query"
-// import UserMovieList from "../MovieList/bingeworthy"
 import { ADD_MOVIE } from "../../utils/mutations"
 import { useMutation } from '@apollo/client'
 
@@ -53,6 +51,7 @@ const SingleMovie = () => {
           }
         }
       })
+      window.location.reload();
     }
   return (
     <div className="container-fluid movie-app align-items-center mt-4 mb-4">
@@ -65,9 +64,9 @@ const SingleMovie = () => {
             src={movies.Poster}
             style={{ margin: "0 auto" }}
           />
-        <button type="button" class="btn btn-danger" onClick={()=> handleAddMovie(movies)}>Add To List</button>
+        <button type="button" class="add-movie-btn btn btn-danger" onClick={()=> handleAddMovie(movies)}>Add To List</button>
         
-          <h1 class="text-primary">
+          <h1 class="text-primary mt-1">
   
             Movie Title:<span class="text-white"> {movies.Title}</span>
           </h1>

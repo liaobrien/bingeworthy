@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MovieList from "./components/MovieList/MovieList";
 import MovieHeading from "./components/MovieHeading";
 import SearchBox from "./components/SearchBox/SearchBox";
-import AddToWatchList from "./components/AddToWatchList";
 import Navigation from "./components/NavBar";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
@@ -75,16 +74,13 @@ const App = () => {
 			<div className="row d-flex align-items-center mt-4 mb-4"></div>
 			<div className="row">
 				<MovieHeading heading="BingeWorthy" />
-					<div className="positioning">
+				<div className="positioning">
 					<Router>
 						
 					<Navigation />
-          <div class="d-flex flex-wrap">
 						<Route  exact path="/">
 							<MovieList
 							movies={movies}
-							watchListComponent={AddToWatchList}
-							handleAddedMovieClick={newAddToWatch}
 							viewOneMovie={ViewOne}
 							handleViewMovieClick={newViewMovie}
 							/>
@@ -93,7 +89,6 @@ const App = () => {
 								setSearchValue={setSearchValue}
 							/>
 						</Route>
-            </div>
 						<Route exact path="/movie/:movieID">
 							<SingleMovie />
 						</Route>
@@ -103,10 +98,9 @@ const App = () => {
 						<Route exact path="/signup">
 							<SignupPage />
 						</Route>
-						<Route exact path="/lists">
+						<Route exact path="/movies">
 							<Lists />
 						</Route>
-						{/* <Route path='Donate' <Donate />/> */}
 					</Router>
 				</div>
 			</div>

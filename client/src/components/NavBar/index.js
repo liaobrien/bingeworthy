@@ -8,15 +8,14 @@ import Auth from '../../utils/auth';
 export default function Navigation() {
     return (
         <Navbar className="navbar-margin navigation" expand="lg">
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Toggle aria-controls="basic-navbar-nav" className="bg-primary" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                     <Link className="nav-item nav-link text-white" to="/">Home</Link>
-                    <Link className="nav-item nav-link text-white" to="/Donate">Donate</Link>
                     {Auth.loggedIn() ? (
                         <>
-                            <Nav.Link className="nav-item nav-link text-white" as={Link} to="/lists">
-                                See your lists
+                            <Nav.Link className="nav-item nav-link text-white" as={Link} to="/movies">
+                                Your Movies
                             </Nav.Link>
                             <Nav.Link className="nav-item nav-link text-white" onClick={Auth.logout}>Logout</Nav.Link>
                         </>

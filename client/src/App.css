@@ -1,3 +1,7 @@
+* {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
 	background: #141414;
 	color: #ffffff;
@@ -7,11 +11,6 @@ body {
 	flex-wrap: nowrap;
 	display: block;
 	
-}
-.image-container {
-	position: relative;
-	transition: transform 0.2s;
-	width: 16%;
 }
 
 .image-container:hover {
@@ -35,19 +34,20 @@ body {
 	padding: 0;
 	text-align: right;
 }
+
 .form-movie-search {
 	position: absolute;
 	text-align: center;
-	width: 35%;
+	width: 50%;
 	left: 0px;
 	right: 0;
-	top: 59px;
+	top: 105px;
 	margin: auto;
 	display: block;
 	flex-wrap: wrap;
 }
 
-.btn{
+.add-movie-btn{
 	position: relative;
 	left: 401px;
 	right: 0;
@@ -71,6 +71,13 @@ h1{
   @media only screen and (max-width: 500px) {
 	.images {
 	  width: 100%;
+	}
+	.add-movie-btn{
+		position: relative;
+		left: 30%;
+		right: 0;
+		margin: auto;
+		top: 4px;
 	}
   }
   

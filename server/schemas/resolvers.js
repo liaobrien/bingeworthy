@@ -7,7 +7,6 @@ const resolvers = {
     me: async (parent, _, context) => {
       if (context.user) {
         const user = User.findOne({ _id: context.user._id }).populate({path: "lists"}).populate({path: "movies"});
-        console.log(user);
         return user;
       }
       throw new AuthenticationError("You must be logged in!");
@@ -72,7 +71,7 @@ const resolvers = {
     },
     deleteList: async (parent, { id }, context) => {
       if (context.user) {
-        const list = await List.findOneAndDelete({ _id: id });
+        const list = await List.findOne({ _id: id });
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
           {
@@ -82,6 +81,7 @@ const resolvers = {
           },
           { new: true }
         );
+        await List.findOneAndDelete({ _id: id });
         return updatedUser;
       }
       throw new AuthenticationError("You need to be logged in!");
