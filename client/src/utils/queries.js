@@ -6,23 +6,43 @@ export const GET_ME = gql`
                   _id
                   username
                   email
-                  listCount
                   lists {
-                        name
+                        _id
+                        movies {
+                              imdbID
+                              title 
+                              runtime
+                              releaseDate
+                              actors
+                              director
+                              poster
+                              plot
+                              imdbRating
+                              genre
+                              rated
+                              watched
+                        }
                   }
+            }
       }
 `;
 
 export const GET_LIST = gql`
       query list($id: ID!) {
-            list(id: $id) {
-                  name
+            list(_id: $id) {
+                  _id 
                   movies {
                         imdbID
-                        title
+                        title 
+                        runtime
                         releaseDate
+                        actors
+                        director
                         poster
                         plot
+                        imdbRating
+                        genre
+                        rated
                         watched
                   }
             }
