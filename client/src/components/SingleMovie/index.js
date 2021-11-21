@@ -77,9 +77,6 @@ const SingleMovie = () => {
             IMDB Rating: <span class="text-white">{movies.imdbRating}</span>
           </h4>
           <h4 class="text-primary">
-            IMDB Rating:<span class="text-white"> {movies.imdbRating}</span>
-          </h4>
-          <h4 class="text-primary">
             Genre:<span class="text-white"> {movies.Genre}</span>
           </h4>
           <h4 class="text-primary">
