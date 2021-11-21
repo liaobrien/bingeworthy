@@ -4,9 +4,9 @@
 
 This is a full-stack application designed for movie lovers who want a centralized location for all the movies they want to watch. Users can search for any title, view more information about the movie, and add it to their account for future reference.
 
-![screenshot of application](./public/screencap1.png)
+![screenshot of application](./client/public/assets/screencap1.png)
 
-![screenshot of application](./public/screencap2.png)
+![screenshot of application](./client/public/assets/screencap2.png)
 
 ## Table of Contents
 
