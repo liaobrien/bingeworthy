@@ -50,15 +50,15 @@ const SingleMovie = () => {
             <h1 className="text-primary mt-1 col-12 text-center">
                 <span className="text-white"> {movies.Title}</span>
             </h1>
-            <div className="container movie-app align-items-center d-flex mt-4 mb-4">
-                <div className="col-4 d-flex justify-content-center">
+            <div className="container col-12 movie-app align-items-center d-flex flex-wrap justify-content-center mt-4 mb-4">
+                <div className="col-lg-4 col-md-8 col-sm-8 col-12 d-flex justify-content-center my-2">
                     <img
                         alt={movies.Title}
                         className="img-fluid"
                         src={movies.Poster}
                         />
                 </div>
-                <div className="col-4 text-center px-3">
+                <div className="col-lg-4 col-md-8 col-sm-8 col-12 text-center px-3 my-2">
                     <div className="text-primary">
                         <h3>Summary</h3>
                         <h4 className="text-white">{movies.Plot}</h4>
@@ -71,7 +71,7 @@ const SingleMovie = () => {
                         Add To List
                     </button>
                 </div>
-                <div className="col-4 text-center px-3">
+                <div className="col-lg-4 col-md-8 col-sm-8 col-12 text-center px-3 my-3">
                     <h4 className="text-primary">
                         Rated: <span className="text-white"> {movies.Rated}</span>
                     </h4>
