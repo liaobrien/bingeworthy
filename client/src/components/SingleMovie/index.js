@@ -64,38 +64,38 @@ const SingleMovie = () => {
             src={movies.Poster}
             style={{ margin: "0 auto" }}
           />
-        <button type="button" class="add-movie-btn btn btn-danger" onClick={()=> handleAddMovie(movies)}>Add To List</button>
+        <button type="button" className="add-movie-btn btn btn-danger" onClick={()=> handleAddMovie(movies)}>Add To List</button>
         
-          <h1 class="text-primary mt-1">
+          <h1 className="text-primary mt-1">
   
-            Movie Title:<span class="text-white"> {movies.Title}</span>
+            Movie Title:<span className="text-white"> {movies.Title}</span>
           </h1>
-          <h4 class="text-primary">
-            Rated: <span class="text-white"> {movies.Rated}</span>
+          <h4 className="text-primary">
+            Rated: <span className="text-white"> {movies.Rated}</span>
           </h4>
-          <h4 class="text-primary">
-            IMDB Rating: <span class="text-white">{movies.imdbRating}</span>
+          <h4 className="text-primary">
+            IMDB Rating: <span className="text-white">{movies.imdbRating}</span>
           </h4>
-          <h4 class="text-primary">
-            Genre:<span class="text-white"> {movies.Genre}</span>
+          <h4 className="text-primary">
+            Genre:<span className="text-white"> {movies.Genre}</span>
           </h4>
-          <h4 class="text-primary">
-            Released:<span class="text-white"> {movies.Released}</span>
+          <h4 className="text-primary">
+            Released:<span className="text-white"> {movies.Released}</span>
           </h4>
-          <h4 class="text-primary">
-            RunTime:<span class="text-white"> {movies.Runtime}</span>
+          <h4 className="text-primary">
+            RunTime:<span className="text-white"> {movies.Runtime}</span>
           </h4>
-          <h4 class="text-primary">
-            Actors:<span class="text-white"> {movies.Actors}</span>
+          <h4 className="text-primary">
+            Actors:<span className="text-white"> {movies.Actors}</span>
           </h4>
-          <h4 class="text-primary">
-            Director: <span class="text-white">{movies.Director}</span>
+          <h4 className="text-primary">
+            Director: <span className="text-white">{movies.Director}</span>
           </h4>
-          <h4 class="text-primary">
-            Movie Plot: <span class="text-white">{movies.Plot}</span>
+          <h4 className="text-primary">
+            Movie Plot: <span className="text-white">{movies.Plot}</span>
           </h4>
-          <h4 class="text-primary">
-            Awards:<span class="text-white"> {movies.Awards}</span>
+          <h4 className="text-primary">
+            Awards:<span className="text-white"> {movies.Awards}</span>
           </h4>
         </div>
       </div>
