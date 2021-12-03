@@ -42,7 +42,6 @@ const client = new ApolloClient({
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const [AddToWatch, setAddToWatch] = useState([]);
   const [ViewMovie, setViewMovie] = useState([]);
 
   const getMovieRequest = async () => {
@@ -55,10 +54,7 @@ const App = () => {
       setMovies(responseJson.Search);
     }
   };
-  const newAddToWatch = (movie) => {
-    const newMovieAdded = [...AddToWatch, movie];
-    setAddToWatch(newMovieAdded);
-  };
+  
   const newViewMovie = (movie) => {
     const ViewTheMovie = [...ViewMovie, movie];
     setViewMovie(ViewTheMovie);
