@@ -46,26 +46,32 @@ const SingleMovie = () => {
         window.location.reload();
     };
     return (
-        <div className="container-fluid movie-app align-items-center mt-4 mb-4">
-            <div className="row">
-                <div className="text-left">
+        <div className="container-fluid d-flex justify-content-center flex-wrap">
+            <h1 className="text-primary mt-1 col-12 text-center">
+                <span className="text-white"> {movies.Title}</span>
+            </h1>
+            <div className="container movie-app align-items-center d-flex mt-4 mb-4">
+                <div className="col-4 d-flex justify-content-center">
                     <img
                         alt={movies.Title}
                         className="img-fluid"
                         src={movies.Poster}
-                        style={{ margin: "0 auto" }}
-                    />
+                        />
+                </div>
+                <div className="col-4 text-center px-3">
+                    <div className="text-primary">
+                        <h3>Summary</h3>
+                        <h4 className="text-white">{movies.Plot}</h4>
+                    </div>
                     <button
                         type="button"
-                        className="add-movie-btn btn btn-danger"
+                        className="btn btn-danger mt-2"
                         onClick={() => handleAddMovie(movies)}
                     >
                         Add To List
                     </button>
-
-                    <h1 className="text-primary mt-1">
-                        Movie Title:<span className="text-white"> {movies.Title}</span>
-                    </h1>
+                </div>
+                <div className="col-4 text-center px-3">
                     <h4 className="text-primary">
                         Rated: <span className="text-white"> {movies.Rated}</span>
                     </h4>
@@ -86,9 +92,6 @@ const SingleMovie = () => {
                     </h4>
                     <h4 className="text-primary">
                         Director: <span className="text-white">{movies.Director}</span>
-                    </h4>
-                    <h4 className="text-primary">
-                        Movie Plot: <span className="text-white">{movies.Plot}</span>
                     </h4>
                     <h4 className="text-primary">
                         Awards:<span className="text-white"> {movies.Awards}</span>
