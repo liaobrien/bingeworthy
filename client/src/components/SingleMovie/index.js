@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams } from "react-router-dom";
 import { ADD_MOVIE } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
+import Auth from "../../utils/auth";
 
 const SingleMovie = () => {
     const [movies, setMovies] = useState({});
@@ -63,13 +64,16 @@ const SingleMovie = () => {
                         <h3>Summary</h3>
                         <h4 className="text-white">{movies.Plot}</h4>
                     </div>
-                    <button
-                        type="button"
-                        className="btn btn-danger mt-2"
-                        onClick={() => handleAddMovie(movies)}
-                    >
-                        Add To List
-                    </button>
+                    {Auth.loggedIn() 
+                        ? <button
+                            type="button"
+                            className="btn btn-danger mt-2"
+                            onClick={() => handleAddMovie(movies)}
+                            >
+                            Add To List
+                            </button> 
+                        : ``
+                    } 
                 </div>
                 <div className="col-lg-4 col-md-8 col-sm-8 col-12 text-center px-3 my-3">
                     <h4 className="text-primary">
