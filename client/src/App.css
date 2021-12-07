@@ -6,12 +6,6 @@ body {
 	background: #141414;
 	color: #ffffff;
 }
-.movie-app > .row {
-	overflow-x: auto;
-	flex-wrap: nowrap;
-	display: block;
-	
-}
 
 .image-container:hover {
 	cursor: pointer;
@@ -47,14 +41,7 @@ body {
 	flex-wrap: wrap;
 }
 
-.add-movie-btn{
-	position: relative;
-	left: 401px;
-	right: 0;
-	margin: auto;
-	bottom: 39px;
-}
-h1{
+h1 {
 	position:relative;
 	left: 0;
 	right: 0;
@@ -63,21 +50,14 @@ h1{
 
 @media only screen and (max-width: 700px) {
 	.images {
-	  width: 49.99999%;
-	  margin: 6px 0;
+		width: 49.99999%;
+		margin: 6px 0;
 	}
-  }
+}
   
-  @media only screen and (max-width: 500px) {
+@media only screen and (max-width: 500px) {
 	.images {
-	  width: 100%;
+		width: 100%;
 	}
-	.add-movie-btn{
-		position: relative;
-		left: 30%;
-		right: 0;
-		margin: auto;
-		top: 4px;
-	}
-  }
+}
   
